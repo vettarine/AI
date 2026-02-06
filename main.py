@@ -297,7 +297,16 @@ def main():
             except Exception as e:
                 print(f"  {model_name}: Ошибка - {str(e)}")
 
-
+        # 10. ДОПОЛНИТЕЛЬНАЯ ВИЗУАЛИЗАЦИЯ
+        print("\n10. ДОПОЛНИТЕЛЬНАЯ ВИЗУАЛИЗАЦИЯ")
+        print("-" * 40)
+        print("Графики сохранены в папке graphs/")
+        print("  • roc_logistic_regression.png - ROC-кривая для Logistic Regression")
+        print("  • roc_svm.png - ROC-кривая для SVM")
+        print("  • cm_logistic_regression.png - Матрица ошибок для LR")
+        print("  • cm_svm.png - Матрица ошибок для SVM")
+        print("  • fi_logistic_regression.png - Важные слова для LR")
+        print("  • fi_svm.png - Важные слова для SVM")
 
         # Сохранение результатов
         print("\n11. СОХРАНЕНИЕ РЕЗУЛЬТАТОВ")

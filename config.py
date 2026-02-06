@@ -128,8 +128,6 @@ class OutputConfig:
         'confusion_matrix': 'confusion_matrix.png',
         'feature_importance': 'feature_importance.png',
         'precision_recall_curve': 'precision_recall_curve.png',
-        'word_cloud_real': 'word_cloud_real.png',
-        'word_cloud_fake': 'word_cloud_fake.png',
         'class_distribution': 'class_distribution.png',
         'text_length_distribution': 'text_length_distribution.png'
     }
