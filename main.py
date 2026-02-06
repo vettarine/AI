@@ -297,29 +297,7 @@ def main():
             except Exception as e:
                 print(f"  {model_name}: Ошибка - {str(e)}")
 
-        # Дополнительная визуализация
-        print("\n10. ДОПОЛНИТЕЛЬНАЯ ВИЗУАЛИЗАЦИЯ")
-        print("-" * 40)
 
-        # Облака слов
-        real_texts = train_df_final[train_df_final['label'] == 0]['processed_text'].tolist()
-        fake_texts = train_df_final[train_df_final['label'] == 1]['processed_text'].tolist()
-
-        # Облако слов для реальных новостей
-        if real_texts:
-            wc_real_file = os.path.join(OutputConfig.GRAPHS_DIR,
-                                        OutputConfig.GRAPH_NAMES['word_cloud_real'])
-            Visualization.create_word_cloud(
-                real_texts[:100], "Real News - Top Words", wc_real_file
-            )
-
-        # Облако слов для фейковых новостей
-        if fake_texts:
-            wc_fake_file = os.path.join(OutputConfig.GRAPHS_DIR,
-                                        OutputConfig.GRAPH_NAMES['word_cloud_fake'])
-            Visualization.create_word_cloud(
-                fake_texts[:100], "Fake News - Top Words", wc_fake_file
-            )
 
         # Сохранение результатов
         print("\n11. СОХРАНЕНИЕ РЕЗУЛЬТАТОВ")
