@@ -12,7 +12,6 @@ import json
 import os
 from datetime import datetime
 from sklearn.metrics import roc_curve, auc, precision_recall_curve
-from wordcloud import WordCloud
 
 
 class Visualization:
@@ -116,34 +115,6 @@ class Visualization:
         print(f"Precision-Recall кривая сохранена: {filepath}")
         return average_precision
 
-    @staticmethod
-    def create_word_cloud(texts, title, filepath):
-        """Создание облака слов."""
-        if not texts:
-            return
-
-        # Объединение всех текстов
-        all_text = ' '.join(texts)
-
-        # Создание облака слов
-        wordcloud = WordCloud(
-            width=800,
-            height=400,
-            background_color='white',
-            max_words=50,
-            contour_width=2,
-            contour_color='steelblue'
-        ).generate(all_text)
-
-        plt.figure(figsize=(10, 5))
-        plt.imshow(wordcloud, interpolation='bilinear')
-        plt.axis('off')
-        plt.title(title)
-        plt.tight_layout()
-        plt.savefig(filepath, dpi=150, bbox_inches='tight')
-        plt.close()
-
-        print(f"Облако слов сохранено: {filepath}")
 
 
 class ReportGenerator:
