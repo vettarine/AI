@@ -5,14 +5,14 @@ from torch.utils.data import DataLoader, Subset
 def get_dataloaders(data_dir, batch_size=32):
 
     transform_train = transforms.Compose([
-        transforms.Resize((128,128)),
+        transforms.Resize((224,224)),
         transforms.RandomHorizontalFlip(),
         transforms.RandomRotation(10),
         transforms.ToTensor()
     ])
 
     transform_test = transforms.Compose([
-        transforms.Resize((128,128)),
+        transforms.Resize((224,224)),
         transforms.ToTensor()
     ])
 
