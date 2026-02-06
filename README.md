@@ -81,20 +81,20 @@
 
 ### 3. Результаты работы и тестирования системы
 
-Результаты Fine-Tune InceptionV2 (Adam):
+Результаты Fine-Tune Adam:
 
-Precision: 0.7421
-Recall: 0.7186
+Precision: 0.7922
+Recall: 0.7762
 
-Результаты Fine-Tune InceptionV2 (AdaSmooth):
+Результаты Fine-Tune AdaSmooth:
 
-Precision: 0.7064
-Recall: 0.6892
+Precision: 0.6064
+Recall: 0.5892
 
-Результаты Scratch InceptionV2 (Adam):
+Результаты Scratch Adam:
 
-Precision: 0.2138
-Recall: 0.1985
+Precision: 0.1334
+Recall: 0.1031
 
 ### 4. Выводы по работе
 
