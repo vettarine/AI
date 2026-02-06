@@ -1,5 +1,4 @@
 torch
-torchvision
-timm
-scikit-learn
+transformers
+datasets
 tqdm
