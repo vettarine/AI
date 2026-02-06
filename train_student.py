@@ -1,10 +1,11 @@
 import json
 import torch
 from torch.utils.data import Dataset, DataLoader
-from transformers import GPT2LMHeadModel, GPT2Tokenizer, AdamW
+from transformers import GPT2LMHeadModel, GPT2Tokenizer
+from torch.optim import AdamW
 from tqdm import tqdm
 
-MODEL_NAME = "distilgpt2"
+MODEL_NAME = "ai-forever/rugpt3small_based_on_gpt2"
 DATA_FILE = "data/teacher_poems.jsonl"
 OUT_DIR = "models/student"
 

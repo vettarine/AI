@@ -3,7 +3,7 @@ import torch
 from transformers import GPT2LMHeadModel, GPT2Tokenizer
 from tqdm import tqdm
 
-MODEL_NAME = "gpt2-medium"
+MODEL_NAME = "ai-forever/rugpt3small_based_on_gpt2"
 PROMPTS_FILE = "data/prompts.txt"
 OUT_FILE = "data/teacher_poems.jsonl"
 
@@ -22,14 +22,22 @@ with open(OUT_FILE, "w", encoding="utf-8") as out:
 
         with torch.no_grad():
             output = model.generate(
-                **inputs,
-                max_length=120,
-                do_sample=True,
-                top_k=50,
-                top_p=0.95,
-                temperature=0.9
-            )
+            **inputs,
+            max_new_tokens=60,
+            do_sample=True,
+            temperature=0.8,
+            top_k=50,
+            top_p=0.9,
+            repetition_penalty=1.3,
+            no_repeat_ngram_size=3,
+            eos_token_id=tokenizer.eos_token_id
+        )
 
         text = tokenizer.decode(output[0], skip_special_tokens=True)
+
+        lines = text.split("\n")
+        lines = [l for l in lines if l.strip()]
+
+        text = "\n".join(lines[:6])
         json.dump({"prompt": prompt, "text": text}, out, ensure_ascii=False)
         out.write("\n")
