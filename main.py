@@ -26,20 +26,7 @@ def main():
     print(f"Метод: {VectorizationConfig.VECTORIZATION_METHOD.upper()} + Logistic Regression & SVM")
     print("=" * 80)
 
-    # ОЧИСТКА СТАРЫХ ФАЙЛОВ WORD CLOUD
-    import glob
-    import shutil
 
-    # Удалить папку graphs полностью и создать заново
-    if os.path.exists(OutputConfig.GRAPHS_DIR):
-        # Удалить только word cloud файлы
-        word_cloud_files = glob.glob(os.path.join(OutputConfig.GRAPHS_DIR, "*word_cloud*"))
-        for file in word_cloud_files:
-            try:
-                os.remove(file)
-                print(f"Удален старый файл: {os.path.basename(file)}")
-            except:
-                pass
 
     try:
         # Инициализация
